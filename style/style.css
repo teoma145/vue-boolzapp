@@ -91,3 +91,14 @@ body{
     margin-top: 15px;
     align-self: flex-start;
 }
+.mess{
+    background-color: var(--color-contact-hover);
+}
+.smile{
+    font-size: 1.7em;
+    margin-top: 12px;
+    
+}
+.sendmsg{
+    width: 85%;
+}
