@@ -42,13 +42,13 @@
             
            </div>
            <div class="col-12 search">
-            <input class="form-control mr-sm-2 m-2" type="search" placeholder="cerca o inizia una nuova chat" aria-label="Search">
+            <input class="form-control mr-sm-2 mt-2 mb-2" type="search" placeholder="cerca o inizia una nuova chat" aria-label="Search">
            </div>
            <div class="flex-grow-1 col-12 overflow-y-auto h0">
             <div class="d-flex" v-for="utenti in contacts">
-                <img src="img/avatar_1.jpg" alt="" class="imgcont">
+                <img :src="utenti.avatar" alt="" class="imgcont">
                 <div class="p-3">
-                    <h5>Michele</h5>
+                    <h5>{{utenti.name}}</h5>
                     <p>ultimo messaggio inviato</p>
                 </div>
                 
@@ -59,13 +59,24 @@
         <div class="col-12 col-md-8 bg-white">
           <div class="row h-100 flex-column">
             <div class="col-12 header">
-              user
+                <div class="  d-flex">
+                    <img src="img/avatar_1.jpg" alt="" class="imgchat">
+                    <h5 class="mt-2 ms-1">michele</h5>
+                  </div>
             </div>
-            <div class="col-12 flex-grow-1">
-              chat
+            <div class="col-12 flex-grow-1 chat flex-column d-flex">
+                <div class="mandato ">
+                    <p class="ms-1 mt-1">Hai portato a spasso il cane?</p>
+                </div>
+                <div class="mandato ">
+                    <p class="ms-1 mt-1">Ricordati di stendere i panni</p>
+                   </div>
+                <div class="ricevuto">
+                    <p class="ms-1 mt-1">Tutto fatto!</p>
+                </div>
             </div>
             <div class="col-12">
-              messaggio
+             messa
             </div>
           </div>
         </div>
