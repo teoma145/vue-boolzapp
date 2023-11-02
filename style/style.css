@@ -26,3 +26,42 @@ body{
 .header{
     background-color: var(--color-headers);
 }
+.myavatar{
+    height:50px
+}
+.myavatar img{
+    width: 50px;
+    height: 50px;
+    border-radius:50px;
+}
+.fa-solid{
+    font-size: 1.4em;
+}
+.notif{
+    background-color: var(--color-notification);
+    padding: 5px 0 5px 0;
+    
+
+}
+.notifdiv{
+  width: 35px;
+  height: 35px;
+  background-color: var(--color-white);
+  border-radius: 50px;
+  display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;
+}
+.search{
+    background-color: var(--color-contact-hover);
+}
+.imgcont{
+    width: 60px;
+    height: 60px;
+    border-radius:50px;
+    margin: 10px;
+}
+.h0{
+    height: 0;
+}

@@ -20,17 +20,39 @@
        <div class="row h-100">
         <div class="col-12 col-md-4 contacts">
           <div class="row h-100 flex-column">
-           <div class="header">
-            header
+           <div class="header p-1 d-flex justify-content-between">
+            <div class="myavatar  d-flex">
+              <img src="img/avatar_io.jpg" alt="">
+              <h5 class="mt-2 ms-1">sofia</h5>
+            </div>
+            <div>
+                <i class="fa-solid fa-spinner mt-3 me-3" style="color: #a9afb7;"></i>
+                <i class="fa-solid fa-message me-3" style="color: #a9afb7;"></i>
+                <i class="fa-solid fa-ellipsis-vertical me-3"style="color: #a9afb7;"></i>
+            </div> 
            </div>
-           <div class="col-12">
-             notifiche
+           <div class="col-12 notif d-flex">
+            <div class="notifdiv ms-2">
+                <i class="fa-solid fa-bell-slash" style="color: #8edafc;;"></i>
+            </div>
+            <div>
+                <span class="ms-2 d-block">ricevi notifiche di nuovi messaggi</span>
+                <a href="" class="ms-3">attiva notifiche desktop</a>
+            </div>
+            
            </div>
-           <div class="col-12">
-             search
+           <div class="col-12 search">
+            <input class="form-control mr-sm-2 m-2" type="search" placeholder="cerca o inizia una nuova chat" aria-label="Search">
            </div>
-           <div class="flex-grow-1 col-12">
-            contatti
+           <div class="flex-grow-1 col-12 overflow-y-auto h0">
+            <div class="d-flex" v-for="utenti in contacts">
+                <img src="img/avatar_1.jpg" alt="" class="imgcont">
+                <div class="p-3">
+                    <h5>Michele</h5>
+                    <p>ultimo messaggio inviato</p>
+                </div>
+                
+            </div>
            </div>
           </div>
         </div>
