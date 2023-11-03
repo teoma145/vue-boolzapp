@@ -189,6 +189,23 @@ createApp({
       },
     addmessage(){
         console.log(this.sendmsg)
+        const newMessage = {
+            date: new Date(),
+            message: this.sendmsg,
+            status: 'sent' 
+          };
+          this.contacts[this.activeindex].messages.push(newMessage);
+          
+          setTimeout(() => {
+            const userMessage = {
+              date: new Date(),
+              message: 'Senti al momento non posso rispondere,non vedi che ci hanno invaso gli alieni?!',
+              status: 'received'
+            };
+            this.contacts[this.activeindex].messages.push(userMessage);
+          }, 1000);
+          this.sendmsg = '';
+        
     }
 }
     

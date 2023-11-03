@@ -73,6 +73,7 @@
               <div class="message" v-for="messaggio in contacts[activeindex].messages"  :class="{ 'mandato': messaggio.status === 'sent', 'ricevuto': messaggio.status === 'received' }">
                 
                     <p class="ms-1 mt-1">{{ messaggio.message }}</p>
+                    <p class="ms-5">{{messaggio.date}}</p>
                 </div>
             </div>
             <div class="col-12 d-flex mess">
