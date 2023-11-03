@@ -175,6 +175,7 @@ createApp({
                 }
             ],
             activeindex:0,
+            sendmsg:""
     };
     
 },
@@ -186,7 +187,9 @@ createApp({
           console.log(this.activeindex)
         }
       },
-
+    addmessage(){
+        console.log(this.sendmsg)
+    }
 }
     
 
