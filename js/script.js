@@ -173,12 +173,19 @@ createApp({
                         }
                     ],
                 }
-            ]
-    }
+            ],
+            activeindex:0,
+    };
     
 },
   methods: {
-
+    ChangeActiveUser(id) {
+        const index = this.contacts.findIndex(contact => contact.id === id);
+        if (index !== -1) {
+          this.activeindex = index;
+          console.log(this.activeindex)
+        }
+      },
 
 }
     
