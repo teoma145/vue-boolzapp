@@ -42,10 +42,10 @@
             
            </div>
            <div class="col-12 search">
-            <input class="form-control mr-sm-2 mt-2 mb-2" type="search" placeholder="cerca o inizia una nuova chat" aria-label="Search">
+            <input class="form-control mr-sm-2 mt-2 mb-2" type="search" placeholder="cerca o inizia una nuova chat" aria-label="Search" v-model="filtercontact" @input="filterContacts">
            </div>
            <div class="flex-grow-1 col-12 overflow-y-auto h0">
-            <div class="d-flex" v-for="utenti in contacts" @click="ChangeActiveUser(utenti.id)">
+            <div class="d-flex" v-for="utenti in filteredContacts" @click="ChangeActiveUser(utenti.id)" v-show="utenti.visible">
                 <img :src="utenti.avatar" alt="" class="imgcont">
                 <div class="p-1">
                     <h5>{{utenti.name}}</h5>
@@ -95,7 +95,3 @@
 
 
 
-<!-- <div class="mandato "> 
-  <p class="ms-1 mt-1">Hai portato a spasso il cane?</p> 
-</div> <div class="mandato "> <p class="ms-1 mt-1">Ricordati di stendere i panni</p> 
-</div> <div class="ricevuto"> <p class="ms-1 mt-1">Tutto fatto!</p> </div> -->

@@ -175,7 +175,9 @@ createApp({
                 }
             ],
             activeindex:0,
-            sendmsg:""
+            sendmsg:"",
+            filtercontact:"",
+            filteredContacts: [] ,
     };
     
 },
@@ -206,9 +208,16 @@ createApp({
           }, 1000);
           this.sendmsg = '';
         
+    },
+    filterContacts() {
+        const searchcontact = this.filtercontact.toLowerCase();
+        this.filteredContacts = this.contacts.filter(contact => {
+            const contactName = contact.name.toLowerCase();
+            return contactName.startsWith(searchcontact);
+        });
     }
-}
-    
+},
+  
 
 
 
