@@ -65,10 +65,10 @@
                     <img :src="contacts[activeindex].avatar" alt="" class="imgchat">
                     <div>
                       <h5 class="ms-1">{{contacts[activeindex].name}}</h5>
-                      <p class="mb-1">ultimo accesso oggi alle {{contacts[activeindex].messages[contacts[activeindex].messages.length - 1].date}}</p>
+                      <p class="mb-1 fontlastacc">ultimo accesso oggi {{contacts[activeindex].messages[contacts[activeindex].messages.length - 1].date}}</p>
                     </div>
                   </div>
-                    <div class="mt-3 me-3">
+                    <div class="mt-3 me-3 d-flex">
                       <i class="fa-solid fa-arrow-left" @click="showchat=false"></i>
                       <i class="fa-solid fa-magnifying-glass ps-4"></i>
                     </div>

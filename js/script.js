@@ -193,6 +193,7 @@ createApp({
         this.showchat=true;
       },
     addmessage(){
+        if (this.sendmsg !== ''){
         console.log(this.sendmsg)
         const dataoggi = new Date;
         const dataString = dataoggi.toString();
@@ -201,7 +202,7 @@ createApp({
         const giorno = dataString.slice(8, 10);
         const anno = dataoggi.getFullYear();
         const newMessage = {
-            date:+giorno+'/'+mese+'/'+anno +' '+ora,
+            date:giorno+'/'+mese+'/'+anno +' '+ora,
             message: this.sendmsg,
             status: 'sent' 
           };
@@ -209,9 +210,11 @@ createApp({
         
         
         
+        
          
           
         setTimeout(() => {
+            
             const dataoggi = new Date;
             const dataString = dataoggi.toString();
             const ora = dataString.slice(16, 21);
@@ -238,7 +241,8 @@ createApp({
           });
         },1003);
         
-    },
+    }
+},
 
     openoption(index){
         if (this.messageindex === index) {
