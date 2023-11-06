@@ -180,6 +180,7 @@ createApp({
             filteredContacts:this.contact,
             messageindex:null,
             showchat:false,
+            microphone:true,
     };
     
 },
@@ -207,7 +208,6 @@ createApp({
             status: 'sent' 
           };
           this.contacts[this.activeindex].messages.push(newMessage);
-        
         
         
         
@@ -240,6 +240,7 @@ createApp({
             messageContainer.scrollTop = messageContainer.scrollHeight;
           });
         },1003);
+        this.microphone=true
         
     }
 },
@@ -262,12 +263,21 @@ createApp({
             const contactName = contact.name.toLowerCase();
             return contactName.startsWith(searchcontact);
         });
-    }
+    },
+    hideMicrophone() {
+        if (this.sendmsg.length > 0) {
+            this.microphone = false;
+        } else {
+            this.microphone = true;
+        }
+    },
+    
 },
   
 created() {
     this.filterContacts();
 },
+
 
 
 }).mount('#app');

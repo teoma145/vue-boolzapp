@@ -93,8 +93,9 @@
             </div>
             <div class="col-12 d-flex mess">
                 <i class="fa-regular fa-face-smile smile" style="color: #c4c8cf;"></i>
-                <input v-model.trim="sendmsg" class="form-control ms-4 mt-2 mb-2 sendmsg" type="text" placeholder="scrivi un messaggio" aria-label="Search" @keyup.enter="addmessage">
-                <i class="fa-solid fa-microphone smile ms-3" style="color: #c4c8cf;"></i>
+                <input v-model.trim="sendmsg" class="form-control ms-4 mt-2 mb-2 sendmsg" type="text" placeholder="scrivi un messaggio" aria-label="Search" @keyup.enter="addmessage" @input="hideMicrophone">
+                <i class="fa-solid fa-microphone smile ms-3" style="color: #c4c8cf;" :class="{'d-none': microphone===false}"></i>
+                <i class="fa-solid fa-paper-plane smile ms-3" style="color: #c4c8cf;" :class="{'d-none': microphone===true}" @click="addmessage"></i>
             </div>
           </div>
         </div>
