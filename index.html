@@ -17,8 +17,8 @@
 <body>
    <div id="app">
      <div class="container border h-100">
-       <div class="row h-100">
-        <div class="col-12 col-md-4 contacts">
+       <div class="row h-100 flex-nowrap">
+        <div class="col-12 col-md-4 d-md-block contacts" :class="{'d-none':showchat}">
           <div class="row h-100 flex-column">
            <div class="header p-1 d-flex justify-content-between">
             <div class="myavatar  d-flex">
@@ -52,29 +52,36 @@
                     <p>{{utenti.messages[utenti.messages.length-1].message}}</p>
                 </div>
                 
+                
             </div>
            </div>
           </div>
         </div>
-        <div class="col-12 col-md-8 bg-white">
+        <div class="col-12 col-md-8 bg-white d-md-block" :class="{'d-none': !showchat}">
           <div class="row h-100 flex-column">
             <div class="col-12 header">
-                <div class="  d-flex">
+                <div class="  d-flex  justify-content-between">
+                  <div class="d-flex">
                     <img :src="contacts[activeindex].avatar" alt="" class="imgchat">
                     <div>
                       <h5 class="ms-1">{{contacts[activeindex].name}}</h5>
-                      <p class="mb-1">ultimo accesso oggi alle</p>
+                      <p class="mb-1">ultimo accesso oggi alle {{contacts[activeindex].messages[contacts[activeindex].messages.length - 1].date}}</p>
                     </div>
-                    
+                  </div>
+                    <div class="mt-3 me-3">
+                      <i class="fa-solid fa-arrow-left" @click="showchat=false"></i>
+                      <i class="fa-solid fa-magnifying-glass ps-4"></i>
+                    </div>
                     
                   </div>
             </div>
             <div class="col-12 flex-grow-1 chat flex-column d-flex h0" ref="messageContainer">
               <div class="message d-flex justify-content-between  " v-for="(messaggio,index) in contacts[activeindex].messages"  :class="{ 'mandato': messaggio.status === 'sent', 'ricevuto': messaggio.status === 'received' }">
                     <div class="messaggiowid">
-                      <p class="ms-1 mt-1">{{ messaggio.message }}</p>
+                      <p class="ms-1 mt-1 flex-grow-1 p-1">{{ messaggio.message }}</p>
+                      <p class="datamsg">{{messaggio.date}}</p>
                     </div>
-                    <p class="datamsg">{{messaggio.date}}</p>
+                    
                     
                     <div class=" mt-3 dropdown" >
                       <i class="fa-solid fa-chevron-down  hovers" @click="openoption(index)"></i>

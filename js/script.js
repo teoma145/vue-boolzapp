@@ -179,7 +179,7 @@ createApp({
             filtercontact:"",
             filteredContacts:this.contact,
             messageindex:null,
-            
+            showchat:false,
     };
     
 },
@@ -190,6 +190,7 @@ createApp({
           this.activeindex = index;
           console.log(this.activeindex)
         }
+        this.showchat=true;
       },
     addmessage(){
         console.log(this.sendmsg)
