@@ -246,6 +246,10 @@ createApp({
             this.messageindex = index; 
         }
     },
+    eliminamsg(index){
+    this.contacts[this.activeindex].messages.splice(index,1);
+    this.messageindex=null;
+    },
 
     filterContacts() {
         const searchcontact = this.filtercontact.toLowerCase();

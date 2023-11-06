@@ -79,7 +79,7 @@
                     <div class=" mt-3 dropdown" >
                       <i class="fa-solid fa-chevron-down  hovers" @click="openoption(index)"></i>
                       <ul class="dropdown-menu  positionmsg" :class={'show':messageindex===index}>
-                        <li class="dropdown-item">elimina messaggio</li>
+                        <li class="dropdown-item" @click="eliminamsg(index)">elimina messaggio</li>
                       </ul>
                     </div>
                 </div>
