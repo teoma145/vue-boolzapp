@@ -177,7 +177,8 @@ createApp({
             activeindex:0,
             sendmsg:"",
             filtercontact:"",
-            filteredContacts: [] ,
+            filteredContacts:this.contact,
+            
     };
     
 },
@@ -191,22 +192,49 @@ createApp({
       },
     addmessage(){
         console.log(this.sendmsg)
+        const dataoggi = new Date;
+        const dataString = dataoggi.toString();
+        const ora = dataString.slice(16, 21);
+        const mese = dataoggi.getMonth() + 1
+        const giorno = dataString.slice(8, 10);
+        const anno = dataoggi.getFullYear();
         const newMessage = {
-            date: new Date(),
+            date:+giorno+'/'+mese+'/'+anno +' '+ora,
             message: this.sendmsg,
             status: 'sent' 
           };
           this.contacts[this.activeindex].messages.push(newMessage);
+        
+        
+        
+         
           
-          setTimeout(() => {
+        setTimeout(() => {
+            const dataoggi = new Date;
+            const dataString = dataoggi.toString();
+            const ora = dataString.slice(16, 21);
+            const mese = dataoggi.getMonth() + 1
+            const giorno = dataString.slice(8, 10);
+            const anno = dataoggi.getFullYear();
             const userMessage = {
-              date: new Date(),
+                date:giorno+'/'+mese+'/'+anno +' '+ora,
               message: 'Senti al momento non posso rispondere,non vedi che ci hanno invaso gli alieni?!',
               status: 'received'
             };
             this.contacts[this.activeindex].messages.push(userMessage);
           }, 1000);
           this.sendmsg = '';
+          
+          this.$nextTick(() => {
+            const messageContainer = this.$refs.messageContainer;
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+          });
+          setTimeout(() => {
+          this.$nextTick(() => {
+            const messageContainer = this.$refs.messageContainer;
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+          });
+        },1003);
         
     },
     filterContacts() {
@@ -218,7 +246,9 @@ createApp({
     }
 },
   
-
+created() {
+    this.filterContacts();
+},
 
 
 }).mount('#app');
