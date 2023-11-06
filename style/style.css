@@ -133,3 +133,8 @@ body{
     bottom:0;
     right: 25px;
 }
+.positionmsg{
+    position: absolute;
+    bottom: -45px;
+    right:0px;
+}

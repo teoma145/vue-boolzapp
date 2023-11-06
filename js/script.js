@@ -178,6 +178,7 @@ createApp({
             sendmsg:"",
             filtercontact:"",
             filteredContacts:this.contact,
+            messageindex:null,
             
     };
     
@@ -237,6 +238,15 @@ createApp({
         },1003);
         
     },
+
+    openoption(index){
+        if (this.messageindex === index) {
+            this.messageindex = null; 
+        } else {
+            this.messageindex = index; 
+        }
+    },
+
     filterContacts() {
         const searchcontact = this.filtercontact.toLowerCase();
         this.filteredContacts = this.contacts.filter(contact => {
